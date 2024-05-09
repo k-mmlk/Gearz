@@ -1,0 +1,1164 @@
+<!-- @format -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gearz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      .arrow-button:hover .uparrow {
+        transform: translateY(-6px) translateX(6px) rotate(45deg);
+      }
+      .category-card:hover .right-arrow {
+        transform: translateX(5px);
+      }
+      .category-card:hover .category-img {
+        transform: scale(1.1);
+      }
+      .product-card:hover .img-container {
+        border-color: black;
+      }
+      .product-card:hover .product-img {
+        transform: scale(1.1);
+      }
+      .arrival-container {
+        grid-template-columns: 45% 55%;
+      }
+
+      .new-card:hover img {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Nav bar  -->
+    <div class="bg-white relative flex items-center py-5 px-7 justify-between">
+      <div class="flex gap-24">
+        <img
+          src="https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/660e721e8a9232bac16191b1_gearz.svg"
+          alt=""
+        />
+        <nav class="lg:block hidden">
+          <ul class="flex xl:gap-10 gap-8">
+            <li>Shop</li>
+            <li>Our Story</li>
+            <li>Collection</li>
+            <li>Blogs</li>
+            <li>Reviews</li>
+            <li>Contact</li>
+          </ul>
+        </nav>
+      </div>
+      <div class="flex items-center sm:gap-6 gap-3">
+        <div class="border-r-[1.8px] border-gray-400 sm:pr-4 pr-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="#4f4d4d"
+              d="M9.775 12q-.9 0-1.5-.675T7.8 9.75l.325-2.45q.2-1.425 1.3-2.363T12 4t2.575.938t1.3 2.362l.325 2.45q.125.9-.475 1.575t-1.5.675zm0-2h4.45L13.9 7.6q-.1-.7-.637-1.15T12 6t-1.263.45T10.1 7.6zM4 20v-2.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20zm2-2h12v-.8q0-.275-.137-.5t-.363-.35q-1.35-.675-2.725-1.012T12 15t-2.775.338T6.5 16.35q-.225.125-.363.35T6 17.2zm6 0"
+            />
+          </svg>
+        </div>
+        <div
+          class="flex items-center border-r-[1px] border-gray-400 pr-10 gap-2 lg:flex hidden"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 256 256"
+          >
+            <path
+              fill="#4f4d4d"
+              d="M232.49 215.51L185 168a92.12 92.12 0 1 0-17 17l47.53 47.54a12 12 0 0 0 17-17ZM44 112a68 68 0 1 1 68 68a68.07 68.07 0 0 1-68-68"
+            />
+          </svg>
+          <p class="text-sm">Explore Gearz</p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="none"
+            stroke="#888888"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M3 6h19l-3 10H6zm0 0l-.75-2.5m8.75 16a1.5 1.5 0 0 1-3 0m9 0a1.5 1.5 0 0 1-3 0"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          class="lg:hidden block"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="#888888"
+            d="M4.5 17.27q-.213 0-.356-.145Q4 16.981 4 16.77q0-.213.144-.356t.356-.144h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144Q4 12.212 4 12t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143T4 7.23t.144-.356q.143-.143.356-.143h15q.213 0 .356.144q.144.144.144.356q0 .213-.144.357t-.356.143z"
+          />
+        </svg>
+      </div>
+      <!-- Hidden Nav  -->
+      <div
+        class="absolute hidden bg-white z-[1000] text-black left-0 top-[100%] w-full"
+      >
+        <nav class="">
+          <ul class="flex flex-col items-center py-10 xl:gap-10 gap-5">
+            <li>Shop</li>
+            <li>Our Story</li>
+            <li>Collection</li>
+            <li>Blogs</li>
+            <li>Reviews</li>
+            <li>Contact</li>
+          </ul>
+        </nav>
+        <div class="px-6  border-[1px] mx-10 rounded-full mb-6 flex items-center bg-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 256 256"
+          >
+            <path
+              fill="#4f4d4d"
+              d="M232.49 215.51L185 168a92.12 92.12 0 1 0-17 17l47.53 47.54a12 12 0 0 0 17-17ZM44 112a68 68 0 1 1 68 68a68.07 68.07 0 0 1-68-68"
+            />
+          </svg>
+          <input
+            class="w-full rounded-full  text-black pl-2 py-2 border-none text-sm outline-none"
+            type="text"
+            placeholder="Explore Gearz"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- hero section -->
+    <div
+      class="text-white px-7 relative object-cover bg-[url('https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/6613d731922f355bb5b46359_hero-p-1600.jpg')]"
+    >
+      <div
+        class="w-full h-full bg-[rgba(0,0,0,0.2)] absolute top-0 left-0"
+      ></div>
+      <div class="relative z-[100]">
+        <div class="pt-28 flex items-center gap-3">
+          <p class="text-lg">Custom Cruise</p>
+          <div class="w-8 h-[1px] bg-white"></div>
+        </div>
+        <h1 class="md:text-6xl md:text-5xl text-4xl py-3 fond-bold">
+          Throttle Position Sensor
+        </h1>
+        <p class="sm:text-lg text-md lg:w-[50%] md:w-[80%] w-[100%] pb-10">
+          This data is crucial for the ECU/PCM to determine the appropriate fuel
+          injection and ignition timing for optimal engine performance and fuel
+          efficiency. Essentially, the TPS provides real-time feedback to the
+          vehicle's computer system.
+        </p>
+        <div>
+          <div class="flex items-center sm:gap-10 gap-4">
+            <button
+              class="bg-red-500 sm:px-7 px-6 py-3 rounded-3xl sm:text-md text-sm hover:bg-white hover:text-black transition-all"
+            >
+              View Collection
+            </button>
+            <button class="flex items-center arrow-button">
+              <p class="sm:text-md text-[15px]">Shop Now</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                class="rotate-45 transition-all uparrow"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#ffffff"
+                  d="M11 18V8.8l-3.6 3.6L6 11l6-6l6 6l-1.4 1.4L13 8.8V18z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="flex flex-wrap items-center sm:mt-72 mt-[150px] sm:gap-12 gap-5 pb-10"
+          >
+            <div class="flex flex-col items-center">
+              <img
+                src="https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/6613db362824acc956c70e59_ic-tires.svg"
+                class="sm:w-[40px] sm:h-[40px] w-[30px] h-[30px]"
+                alt=""
+              />
+              <p class="sm:text-md text-[12px]">TIRES</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <img
+                src="https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/6613db3729396aef5e25ccfa_ic-engine.svg"
+                class="sm:w-[40px] sm:h-[40px] w-[30px] h-[30px]"
+                alt=""
+              />
+              <p class="sm:text-md text-[12px]">ENGINE</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <img
+                src="https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/6613db362dfb8e590d3ca8e2_ic-battery.svg"
+                alt=""
+                class="sm:w-[40px] sm:h-[40px] w-[30px] h-[30px]"
+              />
+              <p class="sm:text-md text-[12px]">BATTERY</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <img
+                src="https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/6613db372824acc956c70e84_ic-oil.svg"
+                alt=""
+                class="sm:w-[40px] sm:h-[40px] w-[30px] h-[30px]"
+              />
+              <p class="sm:text-md text-[12px]">OIL</p>
+            </div>
+            <div class="">
+              <img
+                src="https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/6613db369772ce2852f2ad4d_ic-brake.svg"
+                alt=""
+                class="sm:w-[40px] sm:h-[40px] w-[30px] h-[30px]"
+              />
+              <p class="sm:text-md text-[12px]">BRAKE</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <img
+                src="https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/6613db370fd3b9bad5af8311_ic-diagnostics.svg"
+                alt=""
+                class="sm:w-[40px] sm:h-[40px] w-[30px] h-[30px]"
+              />
+              <p class="sm:text-md text-[12px]">DIAGNOSTICS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Browse by Categories  -->
+    <div class="mt-40 px-7">
+      <h1 class="sm:text-4xl text-2xl">Browse by Categories</h1>
+      <button
+        class="mb-5 ml-auto text-[#989C9B] flex category-card gap-1 items-center"
+      >
+        <p class="sm:text-[15px] text-[11px] hover:text-black">VIEW ALL</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="right-arrow sm:w-[30px] sm:h-[30px] w-[20px] h-[20px] transition-all"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="#4f4d4d"
+            d="m13.692 17.308l-.707-.72l4.088-4.088H5v-1h12.073l-4.088-4.088l.707-.72L19 12z"
+          />
+        </svg>
+      </button>
+
+      <div class="grid lg:grid-cols-5 md:grid-cols-3 items-center gap-4">
+        <div class="bg-[#f4f9fc] cursor-pointer p-5 ruonded-md category-card">
+          <h1 class="text-xl">Engine Components</h1>
+          <p class="pt-2">Get 20% off</p>
+          <button class="mt-7 mb-2 text-[#989C9B] flex gap-2 items-center">
+            <p class="text-[15px]">Shop Now</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              class="right-arrow transition-all"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#4f4d4d"
+                d="m13.692 17.308l-.707-.72l4.088-4.088H5v-1h12.073l-4.088-4.088l.707-.72L19 12z"
+              />
+            </svg>
+          </button>
+          <img
+            class="w-full category-img transition-all duration-1000"
+            src="https://assets-global.website-files.com/660e749960c9538748881b36/660fe1292b2aff8a04db740a_category-thumb-01-p-500.jpg
+        "
+            alt=""
+          />
+        </div>
+        <div class="bg-[#f4f9fc] cursor-pointer p-5 ruonded-md category-card">
+          <h1 class="text-xl">Car Tires</h1>
+          <p class="pt-2">15% off only Today</p>
+          <button class="mt-7 mb-2 text-[#989C9B] flex gap-2 items-center">
+            <p class="text-[15px]">Shop Now</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              class="right-arrow transition-all"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#4f4d4d"
+                d="m13.692 17.308l-.707-.72l4.088-4.088H5v-1h12.073l-4.088-4.088l.707-.72L19 12z"
+              />
+            </svg>
+          </button>
+          <img
+            class="w-full category-img transition-all duration-1000"
+            src="https://assets-global.website-files.com/660e749960c9538748881b36/660fe1a230606a127b3cac98_category-thumb-02-p-500.jpg"
+            alt=""
+          />
+        </div>
+        <div class="bg-[#f4f9fc] cursor-pointer p-5 ruonded-md category-card">
+          <h1 class="text-xl">Spare Parts</h1>
+          <p class="pt-2">Get 16% off</p>
+          <button class="mt-7 mb-2 text-[#989C9B] flex gap-2 items-center">
+            <p class="text-[15px]">Shop Now</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              class="right-arrow transition-all"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#4f4d4d"
+                d="m13.692 17.308l-.707-.72l4.088-4.088H5v-1h12.073l-4.088-4.088l.707-.72L19 12z"
+              />
+            </svg>
+          </button>
+          <img
+            class="w-full category-img transition-all duration-1000"
+            src="https://assets-global.website-files.com/660e749960c9538748881b36/660fe1b2984e39e980e9cc68_category-thumb-03-p-500.jpg"
+            alt=""
+          />
+        </div>
+        <div class="bg-[#f4f9fc] cursor-pointer p-5 ruonded-md category-card">
+          <h1 class="text-xl">Electrical System</h1>
+          <p class="pt-2">Save 25%</p>
+          <button class="mt-7 mb-2 text-[#989C9B] flex gap-2 items-center">
+            <p class="text-[15px]">Shop Now</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              class="right-arrow transition-all"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#4f4d4d"
+                d="m13.692 17.308l-.707-.72l4.088-4.088H5v-1h12.073l-4.088-4.088l.707-.72L19 12z"
+              />
+            </svg>
+          </button>
+          <img
+            class="w-full category-img transition-all duration-1000"
+            src="https://assets-global.website-files.com/660e749960c9538748881b36/660fe1c32403d63a75d7e4ea_category-thumb-04-p-500.jpg"
+            alt=""
+          />
+        </div>
+        <div class="bg-[#f4f9fc] cursor-pointer p-5 ruonded-md category-card">
+          <h1 class="text-xl">Suspension & Steering</h1>
+          <p class="pt-2">Sale 32% off</p>
+          <button class="mt-7 mb-2 text-[#989C9B] flex gap-2 items-center">
+            <p class="text-[15px]">Shop Now</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              class="right-arrow transition-all"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#4f4d4d"
+                d="m13.692 17.308l-.707-.72l4.088-4.088H5v-1h12.073l-4.088-4.088l.707-.72L19 12z"
+              />
+            </svg>
+          </button>
+          <img
+            class="w-full category-img transition-all duration-1000"
+            src="https://assets-global.website-files.com/660e749960c9538748881b36/660fe1d5ee5c408ad232781d_category-thumb-05-p-500.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <!-- Featured Products -->
+    <div class="mt-40 px-7">
+      <h1 class="text-4xl">Featured Products</h1>
+      <button
+        class="mb-5 ml-auto text-[#989C9B] flex category-card gap-1 items-center"
+      >
+        <p class="text-[15px] hover:text-black">VIEW ALL</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          class="right-arrow transition-all"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="#4f4d4d"
+            d="m13.692 17.308l-.707-.72l4.088-4.088H5v-1h12.073l-4.088-4.088l.707-.72L19 12z"
+          />
+        </svg>
+      </button>
+
+      <div class="grid sm:grid-cols-4 grid-cols-2 items-center gap-4">
+        <div class="cursor-pointer product-card">
+          <div
+            class="border-[1px] mt-3 transition-all duration-500 ruonded-md overflow-hidden img-container"
+          >
+            <img
+              class="product-img transition-all duration-1000"
+              src="https://assets-global.website-files.com/660e749960c9538748881b36/660fe3814848546dae16f31b_product-main-01-p-500.jpg"
+              alt=""
+            />
+          </div>
+          <p class="text-lg font-normal mt-3">Wheel Bearing</p>
+          <span class="text-[33336E] text-sm">$ 120.00 USD</span>
+        </div>
+        <div class="cursor-pointer product-card">
+          <div
+            class="border-[1px] mt-3 transition-all duration-500 ruonded-md overflow-hidden img-container"
+          >
+            <img
+              class="product-img transition-all duration-1000"
+              src="https://assets-global.website-files.com/660e749960c9538748881b36/660fe57d87a63b0ed03f6e8f_product-main-02-p-500.jpg"
+              alt=""
+            />
+          </div>
+          <p class="text-lg font-normal mt-3">Brake Pads</p>
+          <span class="text-[33336E] text-sm">$ 160.00 USD</span>
+        </div>
+        <div class="cursor-pointer product-card">
+          <div
+            class="border-[1px] mt-3 transition-all duration-500 ruonded-md overflow-hidden img-container"
+          >
+            <img
+              class="product-img transition-all duration-1000"
+              src="https://assets-global.website-files.com/660e749960c9538748881b36/660fe38cb4cc091d79161ff0_product-main-03-p-500.jpg"
+              alt=""
+            />
+          </div>
+          <p class="text-lg font-normal mt-3">WSpark Plugs</p>
+          <span class="text-[#33336E] text-sm">$ 115.00 USD</span>
+          <span class="text-[#999] text-sm line-through mx-1"
+            >$ 130.00 USD</span
+          >
+        </div>
+        <div class="cursor-pointer product-card">
+          <div
+            class="border-[1px] mt-3 transition-all duration-500 ruonded-md overflow-hidden img-container"
+          >
+            <img
+              class="product-img transition-all duration-1000"
+              src="https://assets-global.website-files.com/660e749960c9538748881b36/660fe6abad2f5afd3878fc65_product-main-04-p-500.jpg"
+              alt=""
+            />
+          </div>
+          <p class="text-lg font-normal mt-3">Radiator Hose</p>
+          <span class="text-[33336E] text-sm">$ 198.00 USD</span>
+        </div>
+      </div>
+    </div>
+    <!-- Get 45% off -->
+    <div class="mt-40 px-7">
+      <div class="grid arrival-container gap-5">
+        <div
+          class="bg-cover md:col-span-1 col-span-2 rounded-lg py-5 pl-4 bg-[url('https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/6613c8c6a2efd7f97eb9486d_feature-1-p-800.jpg')]"
+        >
+          <p class="text-sm">Get 45% off</p>
+          <h1 class="text-2xl pt-2">Instrument cluster</h1>
+          <button class="mt-40 flex category-card gap-1 items-center">
+            <p class="text-[15px]">Shop Now</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              class="right-arrow transition-all duration-300"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#00000"
+                d="m13.692 17.308l-.707-.72l4.088-4.088H5v-1h12.073l-4.088-4.088l.707-.72L19 12z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="bg-cover col-start-1 row-start-2 md:col-span-1 col-span-2 rounded-lg py-5 pl-4 bg-[url('https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/6613c8c6432b743847c7ea42_feature-2-p-800.jpg')]"
+        >
+          <p>New Product</p>
+          <h1>Fuel pressure regulator</h1>
+          <button class="mt-40 flex category-card gap-1 items-center">
+            <p class="text-[15px]">Shop Now</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              class="right-arrow transition-all duration-300"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#00000"
+                d="m13.692 17.308l-.707-.72l4.088-4.088H5v-1h12.073l-4.088-4.088l.707-.72L19 12z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="bg-cover bg-right lg:row-start-1 lg:row-end-3 lg:col-start-2 col-start-1 col-end-3 row-start-1 rounded-lg py-10 pl-10 bg-[url('https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/6613c8c6d213ccdbac1a21b7_feature-3-p-1080.jpg')]"
+        >
+          <div class="flex flex-col h-full justify-between">
+            <div>
+              <p class="text-sm">New Arrivals</p>
+              <h1 class="sm:text-[45px] text-[35px] pb-4">
+                Fuel pressure regulator
+              </h1>
+              <p class="w-[60%]">
+                The regulator ensures proper fuel atomization and
+                distribution,optimizing engine performance.
+              </p>
+              <button
+                class="bg-red-600 px-5 py-3 rounded-3xl text-sm mt-10 text-white transition-all"
+              >
+                Starting From $89.40 USD
+              </button>
+            </div>
+            <button class="mt-40 flex category-card gap-1 items-center">
+              <p class="text-[15px]">Shop Now</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                class="right-arrow transition-all duration-300"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#00000"
+                  d="m13.692 17.308l-.707-.72l4.088-4.088H5v-1h12.073l-4.088-4.088l.707-.72L19 12z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Latest Products -->
+    <div class="mt-40 px-7">
+      <h1 class="text-4xl">Latest Products</h1>
+      <button
+        class="mb-5 ml-auto text-[#989C9B] flex category-card gap-1 items-center"
+      >
+        <p class="text-[15px] hover:text-black">VIEW ALL</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          class="right-arrow transition-all"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="#4f4d4d"
+            d="m13.692 17.308l-.707-.72l4.088-4.088H5v-1h12.073l-4.088-4.088l.707-.72L19 12z"
+          />
+        </svg>
+      </button>
+      <div class="flex sm:flex-row flex-col gap-5">
+        <div
+          class="basis-[30%] bg-cover rounded-md pt-8 px-8 text-white bg-[url('https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/6613bf970e3fec315ffa514d_latestproduct.jpg')]"
+        >
+          <h1 class="text-lg font-medium">Hello Weekend 🖐</h1>
+          <p>Sale 32% off</p>
+          <h3 class="text-lg pt-4">Suspension & Steering</h3>
+          <p class="pt-2">
+            The suspension system includes components such as shocks, struts,
+            springs, control arms, and sway bars.
+          </p>
+          <button class="mt-10 flex category-card gap-1 items-center">
+            <p class="text-[15px]">Shop Now</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              class="right-arrow transition-all duration-300"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#ffffff"
+                d="m13.692 17.308l-.707-.72l4.088-4.088H5v-1h12.073l-4.088-4.088l.707-.72L19 12z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="basis-[70%]">
+          <div class="grid sm:grid-cols-3 grid-cols-2 items-center gap-5">
+            <div class="cursor-pointer product-card">
+              <div
+                class="border-[1px] transition-all duration-500 ruonded-md overflow-hidden img-container"
+              >
+                <img
+                  class="product-img transition-all duration-1000"
+                  src="https://assets-global.website-files.com/660e749960c9538748881b36/660fe3814848546dae16f31b_product-main-01-p-500.jpg"
+                  alt=""
+                />
+              </div>
+              <p class="text-lg font-normal">Wheel Bearing</p>
+              <span class="text-[33336E] text-sm">$ 120.00 USD</span>
+            </div>
+            <div class="cursor-pointer product-card">
+              <div
+                class="border-[1px] transition-all duration-500 ruonded-md overflow-hidden img-container"
+              >
+                <img
+                  class="product-img transition-all duration-1000"
+                  src="https://assets-global.website-files.com/660e749960c9538748881b36/660fe57d87a63b0ed03f6e8f_product-main-02-p-500.jpg"
+                  alt=""
+                />
+              </div>
+              <p class="text-lg font-normal">Brake Pads</p>
+              <span class="text-[33336E] text-sm">$ 160.00 USD</span>
+            </div>
+            <div class="cursor-pointer product-card">
+              <div
+                class="border-[1px] transition-all duration-500 ruonded-md overflow-hidden img-container"
+              >
+                <img
+                  class="product-img transition-all duration-1000"
+                  src="https://assets-global.website-files.com/660e749960c9538748881b36/660fe38cb4cc091d79161ff0_product-main-03-p-500.jpg"
+                  alt=""
+                />
+              </div>
+              <p class="text-lg font-normal">WSpark Plugs</p>
+              <span class="text-[#33336E] text-sm">$ 115.00 USD</span>
+              <span class="text-[#999] text-sm line-through mx-1"
+                >$ 130.00 USD</span
+              >
+            </div>
+            <div class="cursor-pointer product-card">
+              <div
+                class="border-[1px] transition-all duration-500 ruonded-md overflow-hidden img-container"
+              >
+                <img
+                  class="product-img transition-all duration-1000"
+                  src="https://assets-global.website-files.com/660e749960c9538748881b36/660fe6abad2f5afd3878fc65_product-main-04-p-500.jpg"
+                  alt=""
+                />
+              </div>
+              <p class="text-lg font-normal">Radiator Hose</p>
+              <span class="text-[33336E] text-sm">$ 198.00 USD</span>
+            </div>
+            <div class="cursor-pointer product-card">
+              <div
+                class="border-[1px] transition-all duration-500 ruonded-md overflow-hidden img-container"
+              >
+                <img
+                  class="product-img transition-all duration-1000"
+                  src="https://assets-global.website-files.com/660e749960c9538748881b36/660fe6ee4848546dae1a22b9_product-main-05-p-500.jpg"
+                  alt=""
+                />
+              </div>
+              <p class="text-lg font-normal">Transmission Fluid</p>
+              <span class="text-[33336E] text-sm">$ 230.00 USD</span>
+            </div>
+            <div class="cursor-pointer product-card">
+              <div
+                class="border-[1px] transition-all duration-500 ruonded-md overflow-hidden img-container"
+              >
+                <img
+                  class="product-img transition-all duration-1000"
+                  src="https://assets-global.website-files.com/660e749960c9538748881b36/660fe74e0ed4792fef702df4_product-main-06-p-500.jpg"
+                  alt=""
+                />
+              </div>
+              <p class="text-lg font-normal">Wiper Blade</p>
+              <span class="text-[33336E] text-sm">$ 90.00 USD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Free shipping -->
+    <div class="mt-40 px-7">
+      <div
+        class="grid lg:grid-cols-4 md:grid-cols-2 lg:gap-0 gap-10 py-[60px] bg-[#f4f9fc]"
+      >
+        <div class="flex flex-col items-center">
+          <div
+            class="w-[70px] h-[70px] border-[1px] rounded-full flex items-center justify-center bg-white"
+          >
+            <img
+              src="https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/661102e1f1eebb5a51dd04ec_ic-product01.svg"
+              alt=""
+            />
+          </div>
+          <h1 class="pt-3">Free Shipping</h1>
+          <p class="text-sm text-[#3F3333]">
+            You will love at great low prices
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div
+            class="w-[70px] h-[70px] border-[1px] rounded-full flex items-center justify-center bg-white"
+          >
+            <img
+              src="https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/661102e15e3125edbcafd762_ic-product02.svg"
+              alt=""
+            />
+          </div>
+          <h1 class="pt-3">Flexible Payment</h1>
+          <p class="text-sm pr-2 text-[#3F3333]">
+            Pay with Multiple Credit Cards
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div
+            class="w-[70px] h-[70px] border-[1px] rounded-full flex items-center justify-center bg-white"
+          >
+            <img
+              src="https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/661102e18101b845ca122f32_ic-product03.svg"
+              alt=""
+            />
+          </div>
+          <h1 class="pt-3">Fast Delivery</h1>
+          <p class="text-sm text-[#3F3333]">
+            Experience the joy of fast shipping
+          </p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div
+            class="w-[70px] h-[70px] border-[1px] rounded-full flex items-center justify-center bg-white"
+          >
+            <img
+              src="https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/661102e15c692dffca6028f6_ic-product04.svg"
+              alt=""
+            />
+          </div>
+          <h1 class="pt-3">Premium Support</h1>
+          <p class="text-sm pr-2 text-[#3F3333]">Outstanding premium support</p>
+        </div>
+      </div>
+    </div>
+    <!-- Happy Customers -->
+    <div class="mt-40 px-7">
+      <div class="flex sm:flex-row justify-between">
+        <h1 class="sm:text-4xl text-2xl">Happy Customers</h1>
+        <div class="flex gap-2">
+          <div
+            class="w-7 h-7 flex justify-center items-center rounded-full border-2 hover:text-white hover:bg-red-500"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              class="transition-all duration-500"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="m7.85 13l2.85 2.85q.3.3.288.7t-.288.7q-.3.3-.712.313t-.713-.288L4.7 12.7q-.3-.3-.3-.7t.3-.7l4.575-4.575q.3-.3.713-.287t.712.312q.275.3.288.7t-.288.7L7.85 11H19q.425 0 .713.288T20 12t-.288.713T19 13z"
+              />
+            </svg>
+          </div>
+          <div
+            class="w-7 h-7 flex justify-center items-center rounded-full border-2 hover:text-white hover:bg-red-500"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              class="transition-all"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M16.15 13H5q-.425 0-.712-.288T4 12t.288-.712T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.312t.712.287L19.3 11.3q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="flex sm:flex-row flex-col mt-10 gap-4">
+        <div class="basis-[50%]">
+          <img
+            src="https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/6611095f5c692dffca661f81_testimonial-02-p-800.jpg"
+            class="w-full h-full rounded-md object-cover"
+            alt=""
+          />
+        </div>
+        <div class="basis-[50%] lg:p-10 p-5 border-[1.4px] rounded-md">
+          <div class="flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#ff471d"
+                d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188t-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6t.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475t.563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487t.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475t-.575.188t-.6-.213z"
+              /></svg
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#ff471d"
+                d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188t-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6t.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475t.563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487t.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475t-.575.188t-.6-.213z"
+              /></svg
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#ff471d"
+                d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188t-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6t.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475t.563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487t.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475t-.575.188t-.6-.213z"
+              /></svg
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#ff471d"
+                d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188t-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6t.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475t.563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487t.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475t-.575.188t-.6-.213z"
+              /></svg
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#ff471d"
+                d="m12 16.3l-3.7 2.825q-.275.225-.6.213t-.575-.188t-.387-.475t-.013-.65L8.15 13.4l-3.625-2.575q-.3-.2-.375-.525t.025-.6t.35-.488t.6-.212H9.6l1.45-4.8q.125-.35.388-.538T12 3.475t.563.188t.387.537L14.4 9h4.475q.35 0 .6.213t.35.487t.025.6t-.375.525L15.85 13.4l1.425 4.625q.125.35-.012.65t-.388.475t-.575.188t-.6-.213z"
+              />
+            </svg>
+          </div>
+          <p
+            class="pt-5 lg:text-xl text-lg text-[#333333] lg:leading-[1.7] leading-[1.5]"
+          >
+            “I recently replaced my worn-out wiper blades with ones I found on
+            Gearz. The discounted price caught my attention & the quality
+            exceeded my expectations. They installed easily and provide
+            excellent visibility in all weather conditions.”
+          </p>
+          <div>
+            <div class="xl:mt-32 mt-20">
+              <img
+                src="https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/660fcae2166d6bf653554ecb_review-thumb-06.jpg"
+                alt=""
+              />
+            </div>
+            <p>Myo MarLar Kyaw</p>
+            <p>New York, USA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- News & Articles -->
+    <div class="mt-32 px-7">
+      <h1 class="sm:text-4xl text-3xl">News & Articles</h1>
+      <button
+        class="mb-5 ml-auto text-[#989C9B] flex category-card gap-1 items-center"
+      >
+        <p class="text-[15px] hover:text-black">VIEW ALL</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          class="right-arrow transition-all"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="#4f4d4d"
+            d="m13.692 17.308l-.707-.72l4.088-4.088H5v-1h12.073l-4.088-4.088l.707-.72L19 12z"
+          />
+        </svg>
+      </button>
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+        <div>
+          <div class="rounded overflow-hidden border-2 new-card">
+            <img
+              src="https://assets-global.website-files.com/660e749960c9538748881b36/660fce9def937a192f17bca5_blog-thumb-01-p-500.jpg"
+              class="transition-all duration-500"
+              alt=""
+            />
+          </div>
+          <div class="text-[#333333] flex items-center gap-2 text-[15px] my-5">
+            <p class="">Maintenance Matters</p>
+            <div class="w-[5px] h-[5px] bg-gray-500 rounded-full"></div>
+            <p>Apr 5, 2024</p>
+          </div>
+          <h1 class="text-2xl leading-[1.5]">
+            The impact of suspension upgrades on ride quality
+          </h1>
+          <button class="mt-8 flex category-card gap-1 items-center">
+            <p class="text-[15px] text-[#333333]">Read Articles</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              class="right-arrow transition-all duration-300"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#00000"
+                d="m13.692 17.308l-.707-.72l4.088-4.088H5v-1h12.073l-4.088-4.088l.707-.72L19 12z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div>
+          <div class="rounded overflow-hidden border-2 new-card">
+            <img
+              src="https://assets-global.website-files.com/660e749960c9538748881b36/660fceb74635a727c2b65334_blog-thumb-02-p-500.jpg"
+              class="transition-all duration-500"
+              alt=""
+            />
+          </div>
+          <div class="text-[#333333] flex items-center gap-2 text-[15px] my-5">
+            <p class="">Car Chronicles</p>
+            <div class="w-[5px] h-[5px] bg-gray-500 rounded-full"></div>
+            <p>Apr 5, 2024</p>
+          </div>
+          <h1 class="text-2xl leading-[1.5]">
+            Choosing the best wiper blades for your driving needs
+          </h1>
+          <button class="mt-8 flex category-card gap-1 items-center">
+            <p class="text-[15px] text-[#333333]">Read Articles</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              class="right-arrow transition-all duration-300"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#00000"
+                d="m13.692 17.308l-.707-.72l4.088-4.088H5v-1h12.073l-4.088-4.088l.707-.72L19 12z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div>
+          <div class="rounded overflow-hidden border-2 new-card">
+            <img
+              src="https://assets-global.website-files.com/660e749960c9538748881b36/660fced5015988ad32fbffe0_blog-thumb-03-p-500.jpg"
+              class="transition-all duration-500"
+              alt=""
+            />
+          </div>
+          <div class="text-[#333333] flex items-center gap-2 text-[15px] my-5">
+            <p class="">Performance Pointers</p>
+            <div class="w-[5px] h-[5px] bg-gray-500 rounded-full"></div>
+            <p>Apr 5, 2024</p>
+          </div>
+          <h1 class="text-2xl leading-[1.5]">
+            Navigating the world of synthetic vs. Conventional motor oil
+          </h1>
+          <button class="mt-8 flex category-card gap-1 items-center">
+            <p class="text-[15px] text-[#333333]">Read Articles</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              class="right-arrow transition-all duration-300"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#00000"
+                d="m13.692 17.308l-.707-.72l4.088-4.088H5v-1h12.073l-4.088-4.088l.707-.72L19 12z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Trusted Automotive Brands -->
+    <div class="mt-32">
+      <div class="flex lg:flex-row flex-col">
+        <div class="basis-[50%] px-7 py-16 bg-[#f4f9fc]">
+          <h1 class="text-2xl">Trusted Automotive Brands</h1>
+          <p class="text-[18px] sm:w-[70%] w-[100%] pt-3">
+            Discover trusted brands renowned for quality, reliability, and
+            innovation in the automotive industry.
+          </p>
+          <button class="mt-8 flex category-card gap-3 items-center">
+            <p class="text-[16px] text-[#333333]">Explore Categories</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              class="right-arrow transition-all duration-300"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#00000"
+                d="m13.692 17.308l-.707-.72l4.088-4.088H5v-1h12.073l-4.088-4.088l.707-.72L19 12z"
+              />
+            </svg>
+          </button>
+          <div class="grid grid-cols-4 mt-10">
+            <img
+              src="https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/660f8bb6b8c7608ccfe7b449_hourglass.svg"
+              alt=""
+            />
+            <img
+              src="https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/660f8bb5d085aac8281bf5a9_capsule.svg"
+              alt=""
+            />
+            <img
+              src="https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/660f8bb6b8c7608ccfe7b424_lightbox.svg"
+              alt=""
+            />
+            <img
+              src="https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/660f8bb584dbf126b08d988f_spherule.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div
+          class="basis-[50%] py-16 sm:px-12 px-3 text-white bg-cover bg-[url('https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/660f9af9ab60d220586e05ff_cta-p-1080.jpg')]"
+        >
+          <p>Subscribe to our newsletter</p>
+          <h1 class="text-2xl leading-[1.5] pt-2 w-[70%]">
+            Experience top-notch car auto services & repairs today.
+          </h1>
+          <div
+            class="mt-14 sm:w-[80%] w-[100%] rounded-md overflow-hidden flex border-none outline-none"
+          >
+            <input
+              class="w-full px-3 py-3 text-black"
+              placeholder="Email address"
+              type="text"
+            />
+            <button class="bg-red-600 px-8 hover:bg-black transition-all">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer  -->
+    <div class="mt-32 bg-[#000] px-7 py-16 text-white">
+      <div class="grid grid-cols-7 gap-4">
+        <div
+          class="sm:border-r-[0.5px] sm:border-b-0 sm:pb-0 pb-10 border-b-[0.5px] tracking-[1.05px] lg:col-span-2 md:col-span-4 col-span-7 pr-10 text-white"
+        >
+          <img
+            src="https://assets-global.website-files.com/65dc3399cbee81681ea8a7df/660e83daed214a3d85dd1cb6_ft-gearz.svg"
+            alt=""
+          />
+          <p class="text-sm font-thin mt-1">Gearz Autoparts pvt.ltd</p>
+          <p class="bg-[#] text-sm mt-6 font-thin">
+            We are dedicated to providing automotive enthusiasts and everyday
+            drivers alike with a comprehensive solution.
+          </p>
+          <p class="text-sm pt-5 hover:text-red-500 cursor-pointer">
+            info@example.com
+          </p>
+        </div>
+        <div
+          class="lg:col-span-2 md:col-span-3 col-span-7 sm:pl-8 sm:pl-0 tracking-[1.05px]"
+        >
+          <p>Need Help?</p>
+          <p class="text-lg py-4 hover:text-red-500 cursor-pointer">
+            +1 (239) 555-0108
+          </p>
+          <p class="font-thin text-sm leading-[1.8] pr-5">
+            Monday to Friday 9AM - 5PM Saturday & Sunday only 10AM to 12PM.
+          </p>
+          <p class="text-sm pt-5 cursor-pointer hover:text-red-500">
+            support@example.com
+          </p>
+        </div>
+        <div class="lg:col-span-1 md:col-span-2 col-span-4 tracking-[1.05px]">
+          <h1>Pages</h1>
+          <ul class="mt-3 flex flex-col gap-1 font-thin text-sm">
+            <li>
+              <a href="">About us</a>
+            </li>
+            <li>
+              <a href="">Categories</a>
+            </li>
+            <li>
+              <a href="">Shop</a>
+            </li>
+            <li>
+              <a href="">Blogs</a>
+            </li>
+            <li>
+              <a href="">Review</a>
+            </li>
+            <li>
+              <a href="">FAQ</a>
+            </li>
+            <li>
+              <a href="">Our Store</a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="lg:col-span-1 md:col-span-3 col-span-3 mx-auto tracking-[1.05px]"
+        >
+          <h1>Resources</h1>
+          <ul class="mt-3 flex flex-col gap-1 font-thin text-sm">
+            <li>
+              <a href="">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="">Return Policy</a>
+            </li>
+            <li>
+              <a href="">Terms & Conditions</a>
+            </li>
+            <li>
+              <a href="">License</a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="lg:col-span-1 md:col-span-2 col-span-7 sm:ml-auto ml-right tracking-[1.05px]"
+        >
+          <h1>Social</h1>
+          <ul class="mt-3 flex flex-col gap-1 font-thin text-sm">
+            <li>
+              <a href="">Instagram</a>
+            </li>
+            <li>
+              <a href="">Facebook</a>
+            </li>
+            <li>
+              <a href="">Twitter</a>
+            </li>
+            <li>
+              <a href="">YouTube</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="w-full h-[1px] bg-white mt-20"></div>
+        <p class="text-sm mt-6">© 2024 Gear.</p>
+      </div>
+    </div>
+  </body>
+</html>
